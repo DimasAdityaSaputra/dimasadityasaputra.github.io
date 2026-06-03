@@ -1,59 +1,26 @@
-# Personal Portfolio – GitHub Pages
+# Dimas Aditya Saputra Portfolio
 
-This repository hosts my personal portfolio site, live at [https://dimasadityasaputra.github.io](https://dimasadityasaputra.github.io).
+Static personal portfolio for GitHub Pages.
 
-## 🚀 Features
+## Stack
 
-- **Static & Fast**: Pure HTML/CSS, no frameworks
-- **Responsive**: Works on mobile, tablet, desktop
-- **Dark Theme**: Easy‑on‑eyes design with gradient accents
-- **Sections**: About, Skills, Projects, Contact
-- **Deployed via GitHub Pages**: Automatic updates on push
+- HTML
+- CSS
+- Vanilla JavaScript
+- GitHub Pages
 
-## 🛠️ Tech Stack
+## Local preview
 
-- HTML5, CSS3 (Flexbox, Grid)
-- Google Fonts (Inter)
-- Font Awesome icons
-- GitHub Pages hosting
-
-## 📁 Structure
-
-```
-.
-├── index.html          # Main page
-├── style.css           # Styles
-├── README.md           # This file
-└── .gitignore          # Ignore unnecessary files
+```bash
+python3 -m http.server 4173
 ```
 
-## 🧭 How to Run Locally
+Open:
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/DimasAdityaSaputra/dimasadityasaputra.github.io.git
-   cd dimasadityasaputra.github.io
-   ```
+```text
+http://127.0.0.1:4173/
+```
 
-2. Open `index.html` in your browser.
+## Notes
 
-## 🔄 Updating the Site
-
-1. Edit `index.html` or `style.css`
-2. Commit and push:
-   ```bash
-   git add .
-   git commit -m "Update portfolio"
-   git push origin main
-   ```
-3. GitHub Pages will rebuild automatically within a minute.
-
-## 📬 Contact
-
-- GitHub: [DimasAdityaSaputra](https://github.com/DimasAdityaSaputra)
-- Email: dimasasaputra0804@gmail.com
-- Telegram: [@dimas_aditya_s](https://t.me/dimas_aditya_s)
-
----
-
-Built with 🫠 and deployed on GitHub Pages.
+The 3D lanyard/profile card currently uses a placeholder `DA` avatar. Replace it with a real photo later when available.

@@ -1,115 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimas Aditya Saputra | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Dimas Aditya Saputra</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Engineer & Creative Developer</h1>
-            <p>Building tools, automation, and visual experiences with code.</p>
-            <a href="#projects" class="btn">View Projects</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Dimas Aditya Saputra — engineering, creative tech, automation, VFX, and AI workflow experiments."
+    />
+    <title>Dimas Aditya Saputra — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <nav class="nav shell">
+        <a class="brand" href="#top" aria-label="Dimas Aditya Saputra home">
+          <span class="brand-mark">DA</span>
+          <span>Dimas</span>
+        </a>
+
+        <div class="nav-links" aria-label="Page sections">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
+      </nav>
     </header>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Fresh graduate from SMK majoring in Industrial Electrical Engineering, passionate about tinkering, automation, and creative technology. I work with Python, Linux, After Effects, Blender, Unreal Engine, and AI tooling to build practical solutions and visual projects.</p>
-            <p>Currently exploring OpenClaw, Claude Code workflows, and VFX/3D rendering pipelines.</p>
-        </div>
-    </section>
+    <main id="main">
+      <section class="hero shell section" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Engineering · Creative Tech · AI Workflows</p>
+          <h1>Building practical stuff from wires, code, edits, and controlled chaos.</h1>
+          <p class="hero-text">
+            I'm Dimas Aditya Saputra — an Industrial Electrical Engineering fresh graduate who likes oprek,
+            automation, creative editing, and AI-assisted workflows. If it can be optimized, scripted, rendered,
+            or abused into working better, I'm probably interested.
+          </p>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills & Tools</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Programming</h3>
-                    <p>Python, Bash, JavaScript, HTML/CSS</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-desktop"></i>
-                    <h3>Creative Software</h3>
-                    <p>After Effects, DaVinci Resolve, Blender, Unreal Engine 5</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Automation & DevOps</h3>
-                    <p>OpenClaw, WSL2, Git, GitHub Actions, Linux</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-palette"></i>
-                    <h3>VFX & Plugins</h3>
-                    <p>Boris FX BCC, Sapphire, Trapcode Suite</p>
-                </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact me</a>
+          </div>
+
+          <dl class="quick-stats" aria-label="Quick profile facts">
+            <div>
+              <dt>Focus</dt>
+              <dd>Automation + creative tech</dd>
             </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>OpenClaw Workflow Automation</h3>
-                    <p>Custom AI‑assistant setup with Telegram integration, cron jobs, and sub‑agent orchestration.</p>
-                    <span class="tag">Python</span>
-                    <span class="tag">OpenClaw</span>
-                </div>
-                <div class="project-card">
-                    <h3>AMV Editing Pipeline</h3>
-                    <p>Automated video rendering and effect stacking for anime music videos using After Effects scripting.</p>
-                    <span class="tag">After Effects</span>
-                    <span class="tag">Automation</span>
-                </div>
-                <div class="project-card">
-                    <h3>Portfolio GitHub Pages</h3>
-                    <p>This static site – built with pure HTML/CSS and deployed via GitHub Pages.</p>
-                    <span class="tag">HTML/CSS</span>
-                    <span class="tag">GitHub</span>
-                </div>
-                <div class="project-card">
-                    <h3>Python Virtual Environment Manager</h3>
-                    <p>Bash script to create, activate, and manage isolated Python environments on WSL/Linux.</p>
-                    <span class="tag">Bash</span>
-                    <span class="tag">Python</span>
-                </div>
+            <div>
+              <dt>Base</dt>
+              <dd>Indonesia, GMT+7</dd>
             </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Interested in collaboration, freelance work, or just want to talk tech?</p>
-            <div class="contact-links">
-                <a href="https://github.com/DimasAdityaSaputra" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="mailto:dimasasaputra0804@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://t.me/dimas_aditya_s" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+            <div>
+              <dt>Mode</dt>
+              <dd>Learning by shipping</dd>
             </div>
+          </dl>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Dimas Aditya Saputra. Built with 🫠 and deployed on GitHub Pages.</p>
-    </footer>
-</body>
+        <div class="hero-visual" aria-label="3D lanyard profile card">
+          <div class="lanyard-scene" data-tilt-card>
+            <div class="lanyard-strap" aria-hidden="true"></div>
+            <article class="id-card">
+              <div class="card-topline">
+                <span class="status-dot"></span>
+                <span>Available for growth</span>
+              </div>
+              <div class="avatar-frame" aria-label="Photo placeholder for Dimas">
+                <span>DA</span>
+              </div>
+              <div class="id-card-copy">
+                <p class="card-label">Portfolio Pass</p>
+                <h2>Dimas Aditya Saputra</h2>
+                <p>Electrical engineering · editing · coding · AI tooling</p>
+              </div>
+              <div class="barcode" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell split" id="about">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Fresh graduate, serial tinkerer, not allergic to terminals.</h2>
+        </div>
+        <div class="section-copy card">
+          <p>
+            I graduated from SMK majoring in Industrial Electrical Engineering. My interests sit between
+            engineering, Linux/WSL workflows, Python automation, AI tools, and creative software like After Effects,
+            DaVinci Resolve, Blender, and Unreal Engine.
+          </p>
+          <p>
+            This portfolio is intentionally simple for now: a clean base to collect projects, experiments, and proof
+            that the things I learn do not just rot in a notes app somewhere.
+          </p>
+        </div>
+      </section>
+
+      <section class="section shell" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Toolkit</p>
+          <h2>Things I can break, fix, or at least investigate properly.</h2>
+        </div>
+
+        <div class="skill-grid">
+          <article class="card skill-card">
+            <h3>Engineering & Oprek</h3>
+            <p>Electrical fundamentals, troubleshooting mindset, hardware curiosity, practical problem solving.</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Coding & Automation</h3>
+            <p>Python, Linux/WSL, GitHub workflows, scripting, small tools, web experiments.</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Creative/VFX</h3>
+            <p>After Effects, DaVinci Resolve, Blender, Unreal Engine, AMV-style editing, plugins and render workflows.</p>
+          </article>
+          <article class="card skill-card">
+            <h3>AI Workflow</h3>
+            <p>OpenClaw, Claude Code experiments, prompt workflows, local productivity systems, automation ideas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>Current experiments. More receipts coming soon.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project-card featured">
+            <div class="project-meta">Web App · AI</div>
+            <h3>RoastMyCV</h3>
+            <p>A CV feedback web app experiment with AI analysis, scoring, dashboard history, and Supabase-backed auth.</p>
+            <span class="project-status">Built / iterating</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-meta">Workflow · Automation</div>
+            <h3>OpenClaw + Claude Workflow</h3>
+            <p>Experiments around agent workflows, coding assistance, reminders, and practical automation.</p>
+            <span class="project-status">In progress</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-meta">Creative · VFX</div>
+            <h3>Editing / AMV Experiments</h3>
+            <p>Heavy editing, motion graphics, plugins, color, effects, and render workflow exploration.</p>
+            <span class="project-status">Collecting work</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell contact-section" id="contact">
+        <div class="card contact-card">
+          <p class="eyebrow">Contact</p>
+          <h2>Got a project, opportunity, or weird technical rabbit hole?</h2>
+          <p>
+            Reach me on GitHub for now. More links and finished work will be added as the portfolio grows.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="https://github.com/DimasAdityaSaputra"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Dimas Aditya Saputra GitHub profile"
+            >GitHub profile</a>
+            <a class="btn btn-secondary" href="mailto:dimasadityasaputra@example.com">Email placeholder</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
