@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, BadgeCheck, Code2, Cpu, Layers3, Mail, Play, Sparkles, Wrench } from 'lucide-react';
 import Lanyard from './components/Lanyard';
 import InfiniteMenu, { type InfiniteMenuItem } from './components/InfiniteMenu';
+import SoftwareOrbit from './components/SoftwareOrbit/SoftwareOrbit';
 import './styles.css';
 
 const fadeUp = {
@@ -144,6 +145,8 @@ function App() {
               ))}
             </div>
           </section>
+
+          <SoftwareOrbit />
 
           <section className="section shell" id="project-photos">
             <motion.div className="section-heading wide" {...fadeUp}>
