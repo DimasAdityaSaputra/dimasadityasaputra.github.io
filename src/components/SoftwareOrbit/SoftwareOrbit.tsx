@@ -31,12 +31,14 @@ function OrbitScene({ icons, active, rotationSpeed }: OrbitSceneProps) {
         const y = radius * Math.sin(angle);
         const z = Math.sin(angle * 1.35) * 0.72;
 
+        const isFront = z >= 0;
+
         return (
-          <Html key={software.name} position={[x, y, z]} center transform distanceFactor={4.8} zIndexRange={[4, 1]}>
+          <Html key={software.name} position={[x, y, z]} center transform distanceFactor={4.8} zIndexRange={[30, 0]}>
             <motion.div
-              className="software-item"
+              className={`software-item ${isFront ? 'is-front' : 'is-back'}`}
               initial={{ x: software.initial.x, y: software.initial.y, rotate: software.initial.rotate, opacity: 0, scale: 0.8 }}
-              animate={active ? { x: 0, y: 0, rotate: 0, opacity: 1, scale: 1 } : undefined}
+              animate={active ? { x: 0, y: 0, rotate: 0, opacity: isFront ? 1 : 0.46, scale: isFront ? 1 : 0.82 } : undefined}
               transition={{ type: 'spring', stiffness: 90, damping: 18, delay: 0.05 + index * 0.075 }}
             >
               <div className="software-item-card">

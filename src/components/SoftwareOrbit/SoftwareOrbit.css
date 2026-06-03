@@ -64,14 +64,13 @@
 .software-orbit-canvas {
   position: absolute;
   inset: 0;
-  z-index: 1;
 }
 
 .software-photo-wrap {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 5;
+  z-index: 12;
   width: 220px;
   height: 220px;
   transform: translate(-50%, -50%);
@@ -103,6 +102,15 @@
   text-align: center;
   user-select: none;
   pointer-events: auto;
+  transition: filter .25s ease;
+}
+
+.software-item.is-front {
+  filter: drop-shadow(0 24px 42px rgba(217, 180, 111, 0.22));
+}
+
+.software-item.is-back {
+  filter: saturate(.75) brightness(.68) blur(.2px);
 }
 
 .software-item-card {
