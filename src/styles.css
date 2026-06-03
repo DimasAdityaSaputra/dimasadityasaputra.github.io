@@ -149,6 +149,48 @@ h3 { font-size: 1.35rem; letter-spacing: -.04em; }
 .project-topline { width: 100%; justify-content: space-between; color: var(--gold-2); font-size: .76rem; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
 .project-card h3 { margin-top: 46px; }
 .project-status { margin-top: auto; padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--cream); background: rgba(246,239,227,.07); font-size: .76rem; font-weight: 900; text-transform: uppercase; letter-spacing: .07em; }
+.photo-menu-card {
+  position: relative;
+  height: min(680px, 78dvh);
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(217, 180, 111, .14), transparent 24rem),
+    linear-gradient(180deg, rgba(246,239,227,.08), rgba(246,239,227,.025));
+  box-shadow: var(--shadow);
+}
+.photo-menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(246,239,227,.08);
+  border-radius: 32px;
+  pointer-events: none;
+  z-index: 2;
+}
+.photo-menu-note {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(7, 17, 31, .62);
+  backdrop-filter: blur(12px);
+  font-size: .86rem;
+  font-weight: 800;
+}
+.photo-menu-note code {
+  color: var(--gold-2);
+  font-family: inherit;
+}
 .contact-section { padding-bottom: 120px; }
 .contact-card { position: relative; overflow: hidden; padding: 34px; max-width: 920px; background: linear-gradient(135deg, rgba(217,180,111,.15), rgba(18,38,66,.86)); }
 .contact-card::after { content: ""; position: absolute; right: -80px; top: -80px; width: 260px; aspect-ratio: 1; border-radius: 999px; background: rgba(217,180,111,.16); filter: blur(12px); }
@@ -169,6 +211,8 @@ h3 { font-size: 1.35rem; letter-spacing: -.04em; }
   .section { padding-block: 62px; }
   .hero-visual { min-height: 500px; border-radius: 30px; }
   .visual-panel { left: 16px; top: 16px; }
+  .photo-menu-card { min-height: 460px; height: 560px; border-radius: 30px; }
+  .photo-menu-note { left: 16px; right: 16px; top: 16px; justify-content: center; }
   .skill-grid, .project-grid { grid-template-columns: 1fr; }
   .skill-card, .project-card { min-height: unset; }
   .btn, .hero-actions { width: 100%; }

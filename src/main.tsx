@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, BadgeCheck, Code2, Cpu, Layers3, Mail, Play, Sparkles, Wrench } from 'lucide-react';
 import Lanyard from './components/Lanyard';
+import InfiniteMenu, { type InfiniteMenuItem } from './components/InfiniteMenu';
 import './styles.css';
 
 const fadeUp = {
@@ -23,6 +24,13 @@ const projects = [
   { meta: 'AI Web App', title: 'RoastMyCV', text: 'A CV feedback app with AI analysis, deterministic scoring, dashboard history, and Supabase auth.', status: 'Built / iterating' },
   { meta: 'Workflow Lab', title: 'OpenClaw + Claude', text: 'Experiments around agentic workflows, coding assistance, reminders, and practical automation.', status: 'In progress' },
   { meta: 'Creative Lab', title: 'Editing & VFX Experiments', text: 'Heavy editing, motion graphics, color, effects, plugin stacks, and render pipeline exploration.', status: 'Collecting work' },
+];
+
+const photoItems: InfiniteMenuItem[] = [
+  { image: '/project-photos/project-01.svg', link: '#projects', title: 'Project Photo 01', description: 'Replace this placeholder with your first project photo.' },
+  { image: '/project-photos/project-02.svg', link: '#projects', title: 'Project Photo 02', description: 'Replace this placeholder with your second project photo.' },
+  { image: '/project-photos/project-03.svg', link: '#projects', title: 'Project Photo 03', description: 'Replace this placeholder with your third project photo.' },
+  { image: '/project-photos/project-04.svg', link: '#projects', title: 'Project Photo 04', description: 'Replace this placeholder with your fourth project photo.' },
 ];
 
 const metrics = [
@@ -135,6 +143,20 @@ function App() {
                 </motion.article>
               ))}
             </div>
+          </section>
+
+          <section className="section shell" id="project-photos">
+            <motion.div className="section-heading wide" {...fadeUp}>
+              <p className="eyebrow">Project photos</p>
+              <h2>Four rotating project visuals. Drop your real photos into the folder later.</h2>
+            </motion.div>
+            <motion.div className="photo-menu-card" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+              <div className="photo-menu-note">
+                <Layers3 size={18} />
+                <span>Folder: <code>public/project-photos/</code></span>
+              </div>
+              <InfiniteMenu items={photoItems} scale={1.05} />
+            </motion.div>
           </section>
 
           <motion.section className="section shell contact-section" id="contact" {...fadeUp}>
