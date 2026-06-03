@@ -1,26 +1,41 @@
 # Dimas Aditya Saputra Portfolio
 
-Static personal portfolio for GitHub Pages.
+React/Vite personal portfolio for GitHub Pages, featuring a React Bits-style interactive 3D lanyard card.
 
 ## Stack
 
-- HTML
-- CSS
-- Vanilla JavaScript
+- Vite
+- React + TypeScript
+- Three.js / React Three Fiber
+- React Three Rapier physics
 - GitHub Pages
 
 ## Local preview
 
+Install dependencies:
+
 ```bash
-python3 -m http.server 4173
+npm install
 ```
 
-Open:
+Run dev server:
+
+```bash
+npm run dev
+```
+
+Open the URL Vite prints, usually:
 
 ```text
-http://127.0.0.1:4173/
+http://localhost:5173/
+```
+
+## Build
+
+```bash
+npm run build
 ```
 
 ## Notes
 
-The 3D lanyard/profile card currently uses a placeholder `DA` avatar. Replace it with a real photo later when available.
+The lanyard uses `src/assets/lanyard/card.glb` and `src/assets/lanyard/lanyard.png` from React Bits. Replace the GLB texture later when a real profile photo/card design is ready.

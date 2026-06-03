@@ -1,0 +1,31 @@
+.lanyard-wrapper {
+  position: absolute;
+  inset: -120px -80px -120px -80px;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transform-origin: center;
+  pointer-events: auto;
+}
+
+.lanyard-wrapper canvas {
+  cursor: grab;
+}
+
+.lanyard-wrapper canvas:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 900px) {
+  .lanyard-wrapper {
+    inset: -90px -40px -90px -40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lanyard-wrapper {
+    pointer-events: none;
+  }
+}

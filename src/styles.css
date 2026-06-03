@@ -286,160 +286,22 @@ h3 {
 }
 
 .hero-visual {
-  display: grid;
-  place-items: center;
-  min-height: 520px;
-  perspective: 1100px;
-}
-
-.lanyard-scene {
   position: relative;
-  width: min(360px, 88vw);
-  height: 500px;
-  transform-style: preserve-3d;
-  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-  transition: transform 220ms ease;
-}
-
-.lanyard-scene::before,
-.lanyard-scene::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 18px;
-  height: 255px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(103, 232, 249, 0.88), rgba(96, 165, 250, 0.22));
-  transform-origin: top center;
-  box-shadow: 0 12px 36px rgba(103, 232, 249, 0.18);
-}
-
-.lanyard-scene::before {
-  transform: translateX(-32px) rotate(17deg) translateZ(24px);
-}
-
-.lanyard-scene::after {
-  transform: translateX(14px) rotate(-17deg) translateZ(24px);
-}
-
-.lanyard-strap {
-  position: absolute;
-  left: 50%;
-  top: 224px;
-  width: 86px;
-  height: 34px;
-  transform: translateX(-50%) translateZ(38px);
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  background: rgba(6, 18, 31, 0.86);
-  box-shadow: inset 0 0 0 9px rgba(103, 232, 249, 0.08);
-}
-
-.id-card {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: min(330px, 82vw);
-  min-height: 330px;
-  padding: 22px;
-  transform: translateX(-50%) translateZ(70px) rotateX(4deg);
-  border: 1px solid var(--line-strong);
-  border-radius: 34px;
-  background:
-    linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.9)),
-    radial-gradient(circle at 30% 0%, rgba(103, 232, 249, 0.28), transparent 18rem);
-  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-}
-
-.card-topline {
-  justify-content: space-between;
-  gap: 12px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 24px rgba(52, 211, 153, 0.8);
-}
-
-.avatar-frame {
   display: grid;
   place-items: center;
-  width: 170px;
-  height: 170px;
-  margin: 24px auto 20px;
-  border: 1px solid rgba(103, 232, 249, 0.3);
-  border-radius: 32px;
-  background:
-    linear-gradient(135deg, rgba(103, 232, 249, 0.18), rgba(96, 165, 250, 0.08)),
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), transparent 5rem),
-    #07111f;
-  box-shadow: inset 0 0 48px rgba(103, 232, 249, 0.08);
+  min-height: 620px;
+  isolation: isolate;
+  overflow: visible;
 }
 
-.avatar-frame span {
-  color: var(--text);
-  font-size: 3rem;
-  font-weight: 900;
-  letter-spacing: -0.08em;
-}
-
-.id-card-copy {
-  text-align: center;
-}
-
-.card-label,
-.project-meta,
-.project-status {
-  margin: 0;
-  color: var(--cyan);
-  font-size: 0.76rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.id-card-copy h2 {
-  margin-top: 8px;
-  font-size: 1.55rem;
-}
-
-.id-card-copy p:last-child {
-  margin: 10px 0 0;
-  font-size: 0.93rem;
-}
-
-.barcode {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 20px;
-  opacity: 0.42;
-}
-
-.barcode span {
-  width: 4px;
-  height: 28px;
+.lanyard-backdrop {
+  position: absolute;
+  width: min(380px, 72vw);
+  aspect-ratio: 1;
   border-radius: 999px;
-  background: var(--text);
-}
-
-.barcode span:nth-child(2),
-.barcode span:nth-child(5) {
-  height: 18px;
-}
-
-.barcode span:nth-child(3) {
-  width: 8px;
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.24), rgba(96, 165, 250, 0.07) 48%, transparent 72%);
+  filter: blur(10px);
+  pointer-events: none;
 }
 
 .split {
@@ -557,7 +419,7 @@ h3 {
   }
 
   .hero-visual {
-    min-height: 480px;
+    min-height: 560px;
   }
 
   .skill-grid,
@@ -616,20 +478,7 @@ h3 {
   }
 
   .hero-visual {
-    min-height: 430px;
-  }
-
-  .lanyard-scene {
-    height: 440px;
-  }
-
-  .id-card {
-    min-height: 300px;
-  }
-
-  .avatar-frame {
-    width: 140px;
-    height: 140px;
+    min-height: 480px;
   }
 }
 
@@ -647,7 +496,5 @@ h3 {
     transform: none;
   }
 
-  .lanyard-scene {
-    transform: none !important;
-  }
+
 }
