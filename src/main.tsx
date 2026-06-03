@@ -1,129 +1,156 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, BadgeCheck, Code2, Cpu, Layers3, Mail, Play, Sparkles, Wrench } from 'lucide-react';
 import Lanyard from './components/Lanyard';
 import './styles.css';
 
+const fadeUp = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-90px' },
+  transition: { duration: 0.65 },
+};
+
 const skills = [
-  ['Engineering & Oprek', 'Electrical fundamentals, troubleshooting mindset, hardware curiosity, practical problem solving.'],
-  ['Coding & Automation', 'Python, Linux/WSL, GitHub workflows, scripting, small tools, web experiments.'],
-  ['Creative/VFX', 'After Effects, DaVinci Resolve, Blender, Unreal Engine, AMV-style editing, plugins and render workflows.'],
-  ['AI Workflow', 'OpenClaw, Claude Code experiments, prompt workflows, local productivity systems, automation ideas.'],
+  { icon: Cpu, title: 'Engineering Mindset', text: 'Electrical fundamentals, troubleshooting, hardware curiosity, and practical problem solving.' },
+  { icon: Code2, title: 'Code & Automation', text: 'Python, Linux/WSL, GitHub workflows, scripting, web experiments, and small internal tools.' },
+  { icon: Play, title: 'Creative Production', text: 'After Effects, DaVinci Resolve, Blender, Unreal Engine, AMV edits, plugins, and render workflows.' },
+  { icon: Sparkles, title: 'AI Workflow', text: 'OpenClaw, Claude Code, AI-assisted coding, prompt workflows, and automation systems.' },
 ];
 
 const projects = [
-  ['Web App · AI', 'RoastMyCV', 'A CV feedback web app experiment with AI analysis, scoring, dashboard history, and Supabase-backed auth.', 'Built / iterating'],
-  ['Workflow · Automation', 'OpenClaw + Claude Workflow', 'Experiments around agent workflows, coding assistance, reminders, and practical automation.', 'In progress'],
-  ['Creative · VFX', 'Editing / AMV Experiments', 'Heavy editing, motion graphics, plugins, color, effects, and render workflow exploration.', 'Collecting work'],
+  { meta: 'AI Web App', title: 'RoastMyCV', text: 'A CV feedback app with AI analysis, deterministic scoring, dashboard history, and Supabase auth.', status: 'Built / iterating' },
+  { meta: 'Workflow Lab', title: 'OpenClaw + Claude', text: 'Experiments around agentic workflows, coding assistance, reminders, and practical automation.', status: 'In progress' },
+  { meta: 'Creative Lab', title: 'Editing & VFX Experiments', text: 'Heavy editing, motion graphics, color, effects, plugin stacks, and render pipeline exploration.', status: 'Collecting work' },
+];
+
+const metrics = [
+  ['Focus', 'Creative automation'],
+  ['Base', 'Indonesia · GMT+7'],
+  ['Status', 'Fresh graduate'],
 ];
 
 function App() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header" aria-label="Primary navigation">
-        <nav className="nav shell">
-          <a className="brand" href="#top" aria-label="Dimas Aditya Saputra home">
-            <span className="brand-mark">DA</span>
-            <span>Dimas</span>
-          </a>
-          <div className="nav-links" aria-label="Page sections">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
-      </header>
-
-      <main id="main">
-        <section className="hero shell section" id="top">
-          <div className="hero-copy">
-            <p className="eyebrow">Engineering · Creative Tech · AI Workflows</p>
-            <h1>Building practical stuff from wires, code, edits, and controlled chaos.</h1>
-            <p className="hero-text">
-              I'm Dimas Aditya Saputra — an Industrial Electrical Engineering fresh graduate who likes oprek,
-              automation, creative editing, and AI-assisted workflows. If it can be optimized, scripted, rendered,
-              or abused into working better, I'm probably interested.
-            </p>
-            <div className="hero-actions" aria-label="Primary actions">
-              <a className="btn btn-primary" href="#projects">View projects</a>
-              <a className="btn btn-secondary" href="#contact">Contact me</a>
+      <div className="page-shell">
+        <header className="site-header" aria-label="Primary navigation">
+          <nav className="nav shell">
+            <a className="brand" href="#top" aria-label="Dimas Aditya Saputra home">
+              <span className="brand-mark">DA</span>
+              <span>Dimas Aditya</span>
+            </a>
+            <div className="nav-links" aria-label="Page sections">
+              <a href="#about">About</a>
+              <a href="#skills">Stack</a>
+              <a href="#projects">Work</a>
+              <a href="#contact">Contact</a>
             </div>
-            <dl className="quick-stats" aria-label="Quick profile facts">
-              <div><dt>Focus</dt><dd>Automation + creative tech</dd></div>
-              <div><dt>Base</dt><dd>Indonesia, GMT+7</dd></div>
-              <div><dt>Mode</dt><dd>Learning by shipping</dd></div>
-            </dl>
-          </div>
+          </nav>
+        </header>
 
-          <div className="hero-visual" aria-label="Interactive 3D lanyard profile card">
-            <div className="lanyard-backdrop" />
-            <Lanyard position={[0, 0, 22]} gravity={[0, -40, 0]} />
-          </div>
-        </section>
+        <main id="main">
+          <section className="hero shell" id="top">
+            <motion.div className="hero-copy" {...fadeUp}>
+              <div className="availability-pill"><BadgeCheck size={16} /> Available to learn, build, and ship</div>
+              <p className="eyebrow">Engineering · Creative Systems · AI Workflow</p>
+              <h1>Professional portfolio for a builder who learns by making real things.</h1>
+              <p className="hero-text">
+                I’m Dimas Aditya Saputra, an Industrial Electrical Engineering fresh graduate focused on practical engineering,
+                automation, creative production, and AI-assisted workflows. Clean execution first, noise later.
+              </p>
+              <div className="hero-actions" aria-label="Primary actions">
+                <a className="btn btn-primary" href="#projects">Explore work <ArrowUpRight size={18} /></a>
+                <a className="btn btn-secondary" href="https://github.com/DimasAdityaSaputra" target="_blank" rel="noreferrer"><Code2 size={18} /> GitHub</a>
+              </div>
+              <div className="metric-row" aria-label="Quick profile facts">
+                {metrics.map(([label, value]) => (
+                  <div className="metric-card" key={label}>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-        <section className="section shell split" id="about">
-          <div>
-            <p className="eyebrow">About</p>
-            <h2>Fresh graduate, serial tinkerer, not allergic to terminals.</h2>
-          </div>
-          <div className="section-copy card">
-            <p>
-              I graduated from SMK majoring in Industrial Electrical Engineering. My interests sit between
-              engineering, Linux/WSL workflows, Python automation, AI tools, and creative software like After Effects,
-              DaVinci Resolve, Blender, and Unreal Engine.
-            </p>
-            <p>
-              This portfolio is intentionally simple for now: a clean base to collect projects, experiments, and proof
-              that the things I learn do not just rot in a notes app somewhere.
-            </p>
-          </div>
-        </section>
+            <motion.div className="hero-visual" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }} aria-label="Interactive 3D lanyard profile card">
+              <div className="visual-panel">
+                <div className="panel-kicker">Interactive ID Card</div>
+                <div className="panel-title">Drag the lanyard</div>
+              </div>
+              <Lanyard position={[0, 0, 22]} gravity={[0, -40, 0]} />
+            </motion.div>
+          </section>
 
-        <section className="section shell" id="skills">
-          <div className="section-heading">
-            <p className="eyebrow">Toolkit</p>
-            <h2>Things I can break, fix, or at least investigate properly.</h2>
-          </div>
-          <div className="skill-grid">
-            {skills.map(([title, text]) => (
-              <article className="card skill-card" key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section shell" id="projects">
-          <div className="section-heading">
-            <p className="eyebrow">Projects</p>
-            <h2>Current experiments. More receipts coming soon.</h2>
-          </div>
-          <div className="project-grid">
-            {projects.map(([meta, title, text, status], index) => (
-              <article className={`card project-card ${index === 0 ? 'featured' : ''}`} key={title}>
-                <div className="project-meta">{meta}</div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <span className="project-status">{status}</span>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section shell contact-section" id="contact">
-          <div className="card contact-card">
-            <p className="eyebrow">Contact</p>
-            <h2>Got a project, opportunity, or weird technical rabbit hole?</h2>
-            <p>Reach me on GitHub for now. More links and finished work will be added as the portfolio grows.</p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href="https://github.com/DimasAdityaSaputra" target="_blank" rel="noreferrer" aria-label="Open Dimas Aditya Saputra GitHub profile">GitHub profile</a>
-              <a className="btn btn-secondary" href="mailto:dimasadityasaputra@example.com">Email placeholder</a>
+          <motion.section className="section shell split" id="about" {...fadeUp}>
+            <div className="section-intro">
+              <p className="eyebrow">About</p>
+              <h2>Calm interface, practical brain, slightly dangerous curiosity.</h2>
             </div>
-          </div>
-        </section>
-      </main>
+            <div className="content-card about-card">
+              <p>
+                I graduated from SMK majoring in Industrial Electrical Engineering. My current lane combines engineering fundamentals,
+                Linux/WSL workflows, Python automation, creative software, and AI tooling.
+              </p>
+              <p>
+                This site is the base layer: polished enough to share, flexible enough to keep expanding as projects, edits, experiments,
+                and proof-of-work arrive.
+              </p>
+            </div>
+          </motion.section>
+
+          <section className="section shell" id="skills">
+            <motion.div className="section-heading" {...fadeUp}>
+              <p className="eyebrow">Stack</p>
+              <h2>Tools and instincts I use to turn messy ideas into working output.</h2>
+            </motion.div>
+            <div className="skill-grid">
+              {skills.map(({ icon: Icon, title, text }, index) => (
+                <motion.article className="content-card skill-card" key={title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: index * 0.08 }}>
+                  <div className="icon-box"><Icon size={22} /></div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </motion.article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section shell" id="projects">
+            <motion.div className="section-heading wide" {...fadeUp}>
+              <p className="eyebrow">Selected work</p>
+              <h2>Project cards for the work that exists now, with room for the better receipts later.</h2>
+            </motion.div>
+            <div className="project-grid">
+              {projects.map((project, index) => (
+                <motion.article className={`content-card project-card ${index === 0 ? 'featured' : ''}`} key={project.title} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
+                  <div className="project-topline">
+                    <span>{project.meta}</span>
+                    <ArrowUpRight size={18} />
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.text}</p>
+                  <div className="project-status">{project.status}</div>
+                </motion.article>
+              ))}
+            </div>
+          </section>
+
+          <motion.section className="section shell contact-section" id="contact" {...fadeUp}>
+            <div className="content-card contact-card">
+              <div className="contact-icon"><Wrench size={28} /></div>
+              <p className="eyebrow">Contact</p>
+              <h2>Need someone practical for a project, internship, or technical rabbit hole?</h2>
+              <p>Start with GitHub. More contact links and finished work will be added as the portfolio grows.</p>
+              <div className="hero-actions">
+                <a className="btn btn-primary" href="https://github.com/DimasAdityaSaputra" target="_blank" rel="noreferrer"><Code2 size={18} /> GitHub profile</a>
+                <a className="btn btn-secondary" href="mailto:dimasadityasaputra@example.com"><Mail size={18} /> Email placeholder</a>
+              </div>
+            </div>
+          </motion.section>
+        </main>
+      </div>
     </>
   );
 }
